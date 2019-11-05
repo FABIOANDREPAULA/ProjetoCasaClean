@@ -1,0 +1,36 @@
+.topodata {
+  margin-bottom: 40px;
+}
+.traco {
+  border-bottom: solid;
+  border-color: rgba(199, 21, 133, 0.3);
+  margin-bottom: 20px;
+}
+.tituloContratar {
+  text-align: center;
+  color: #c71585;
+  margin-top: 110px;
+}
+.tituloHora {
+  text-align: center;
+  color: #c71585;
+  margin-bottom: 20px;
+}
+.seletor {
+  background-color: #c71585;
+  color: #ffffff;
+  position: relative;
+}
+.btn {
+  background-color: #c71585;
+  border-color: #ff1493;
+}
+.table {
+  background-color: #c71585;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.interior {
+  margin-top: 3px;
+  border-color: #c71585;
+}
