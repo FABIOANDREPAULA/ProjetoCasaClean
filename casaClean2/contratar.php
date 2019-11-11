@@ -7,52 +7,28 @@
     </h3>
 
     <h2 class="tituloFormulario">Complete o Formulário</h2>
-    <form class="container" id="test" action="contratar.php">
+    <form class="container" id="test" action="conectarBanco.php" method="post">
       
       <fieldset class="formCadastro">
         <div>
           <div class="row">
-            <div class="form-group col-md-6">
-              <label>Nome Completo</label>
-              <input
-                type="text"
-                class="form-control interior"
-                placeholder="Insira seu nome completo"
-              />
-            </div>
-          </div>
-          <div class=" row">
-            <div class="form-group col-md-4">
-              <label>Email</label>
-              <input type="email" class="form-control interior" placeholder="Email" />
-            </div>
-            <div class="form-group col-md-4">
-              <label>Senha</label>
-              <input type="password" class="form-control interior" placeholder="Senha" />
-            </div>
-            <div class="form-group col-md-4">
-              <label>Confirmar Senha</label>
-              <input type="password" class="form-control interior" placeholder="Confirmar Senha" />
-            </div>
-          </div>
-          <div class="row">
             <div class="form-group col-md-2">
               <label>CEP</label>
-              <input type="text" class="form-control interior" />
+              <input type="text" class="form-control interior" name="cep"/>
             </div>
             <div class=" col-md-6">
               <label>Endereço</label>
-              <input type="text" class="form-control interior" placeholder="Rua dos Bobos" />
+              <input type="text" class="form-control interior" placeholder="Rua dos Bobos" name="endereco" />
             </div>
           </div>
           <div class="row">
             <div class="form-group col-md-2">
               <label>Numero</label>
-              <input type="text" class="form-control interior" placeholder="Numero" />
+              <input type="text" class="form-control interior" placeholder="Numero" name="numero"/>
             </div>
             <div class="form-group col-md-4">
               <label>Bairro</label>
-              <input type="text" class="form-control interior" placeholder="Bairro" />
+              <input type="text" class="form-control interior" placeholder="Bairro" name="bairro"/>
             </div>
           </div>
           <div class="row">
@@ -62,20 +38,26 @@
                 type="text"
                 class="form-control interior"
                 placeholder="Apartamento, hotel, casa, etc."
+                name="complemento"
               />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label>Cidade</label>
-              <input type="text" class="form-control interior" placeholder="Cidade" />
+              <input type="text" class="form-control interior" placeholder="Cidade" name="cidade"/>
             </div>
 
             <div class="form-group col-md-4">
               <label>Estado</label>
-              <select class="form-control interior">
-                <option selected>Escolher...</option>
-                <option>...</option>
+              <select class="form-control interior" name="estado">
+                <option name="estado" selected>Escolher...</option>
+                <option name="estado" value='MG'>MG</option>
+                <option name="estado" value='SP'>SP</option>
+                <option name="estado" value='RJ'>RJ</option>
+                <option name="estado" value='SC'>SC</option>
+                <option name="estado" value='AM'>AM</option>
+                <option name="estado" value='ES'>ES</option>
               </select>
             </div>
           </div>
