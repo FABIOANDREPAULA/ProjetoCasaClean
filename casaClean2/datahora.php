@@ -1,5 +1,6 @@
   <?php
     ob_start();
+    session_start();
   ?>
     <link rel="stylesheet" type="text/css" href="css/dataHora.css" />
     <h2 class="tituloContratar">Escolha o serviço desejado</h2>

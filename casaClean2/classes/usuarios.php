@@ -1,5 +1,7 @@
 <?php
+
   class Usuario{
+
       private $pdo;
       public $msgErro="";
       public function conectar($nome, $host, $usuario, $senha){
@@ -53,9 +55,19 @@
     }catch(PDOException $erro){
         echo "Erro ao se conectar ao banco de dados! Erro:".$erro->getMessage();
     }
+    function nome(){
+        $consulta = $this->conexao->query("select nome from usuarios");
+
+        $nomes = $consulta->fetchAll();
+
+        return $nomes;
+    }
+
     
         $login = $_POST['email'];
         $senha = $_POST['senha'];
+
+        $_SESSION["nome"] = $nome;
         
 
     $sql=$conecta->prepare("SELECT * FROM usuarios WHERE email='$login' AND senha='$senha'");
@@ -66,6 +78,7 @@
         session_start();
         $_SESSION["email"]=$login;
         $_SESSION["senha"]=$senha;
+        $_SESSION["nome"]=$nome;
         $linha=$sql->fetch();
         
                 $nivel=$linha['nivel']; 

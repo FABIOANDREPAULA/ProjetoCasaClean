@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     $cep = $_POST['cep'];
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
@@ -7,7 +10,13 @@
     $complemento = $_POST['complemento'];
     $cidade = $_POST['cidade'];
     
-
+    $_SESSION['cep'] = $cep;
+    $_SESSION['estado'] = $estado;
+    $_SESSION['endereco'] = $endereco;
+    $_SESSION['numero'] = $numero;
+    $_SESSION['bairro'] = $bairro;
+    $_SESSION['complemento'] = $complemento;
+    $_SESSION['cidade'] = $cidade;
 
     $conexao = new mysqli('localhost','root','','casaclean');
     if($conexao->connect_error){

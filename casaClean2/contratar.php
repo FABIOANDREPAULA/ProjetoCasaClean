@@ -1,5 +1,5 @@
   <?php
-    ob_start()
+    ob_start();
   ?>
     <link rel="stylesheet" type="text/css" href="css/contratar.css" />
     <h3 class=" container subtitulo">
@@ -69,7 +69,46 @@
               </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Concluir</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" name="concluir">Concluir</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirmar Contratação</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <?php
+                    session_start();
+
+                    $nome = $_SESSION["nome"];
+                    $servico = $_SESSION['servicos'];
+                    $data = $_SESSION['data'];
+                    $horaInicio = $_SESSION['horaInicio'];
+                    $horaFim = $_SESSION['horaFim'];
+                    $valor = $_SESSION['valor'];
+
+                    echo $nome.", O serviço que você contratou é: \n".$servico.", na data "
+                    .$data.", durante o Horário das: ".$horaInicio." - ".$horaFim."\n Valor Total: ".$valor;
+                  ?>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" name="cancelar">Cancelar
+                  <?php
+                      if(isset($_POST['cancelar'])){
+                      session_unset($_SESSION['servicos'], $_SESSION['data'], 
+                      $_SESSION['horaInicio'], $_SESSION['horaFim'], $_SESSION['valor']);
+                      echo "<script type='text/javascript'>location.href = 'datahora.php'; </script>";
+                      }
+                  ?>
+                  </button>
+                  <button type="submit" class="btn btn-primary">Sim</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <button type="reset" class="btn btn-primary" value="Entrar">Limpar</button>
           <a href="datahora.php" class="btn btn-primary">Voltar</a>
         </div>
