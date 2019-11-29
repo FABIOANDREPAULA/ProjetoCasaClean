@@ -1,6 +1,7 @@
   <?php
     ob_start();
   ?>
+    <script src="../js/botao.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/contratar.css" />
     <h3 class=" container subtitulo">
       Estamos quase lá, complete os dados para finalizar o pedido...
@@ -83,25 +84,23 @@
                   <?php
                     session_start();
 
-                    $nome = $_SESSION["nome"];
                     $servico = $_SESSION['servicos'];
                     $data = $_SESSION['data'];
                     $horaInicio = $_SESSION['horaInicio'];
                     $horaFim = $_SESSION['horaFim'];
                     $valor = $_SESSION['valor'];
 
-                    echo $nome.", O serviço que você contratou é: \n".$servico.", na data "
+                    echo "O serviço que você contratou é: \n".$servico.", na data "
                     .$data.", durante o Horário das: ".$horaInicio." - ".$horaFim."\n Valor Total: ".$valor;
                   ?>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" name="cancelar">Cancelar
+                  <button type="reset" class="btn btn-secondary" id="botao" data-dismiss="modal" name="cancelar">Cancelar
                   <?php
-                      if(isset($_POST['cancelar'])){
+                      /*if(isset($_POST['cancelar'])){
                       session_unset($_SESSION['servicos'], $_SESSION['data'], 
                       $_SESSION['horaInicio'], $_SESSION['horaFim'], $_SESSION['valor']);
-                      echo "<script type='text/javascript'>location.href = 'datahora.php'; </script>";
-                      }
+                      }*/
                   ?>
                   </button>
                   <button type="submit" class="btn btn-primary">Sim</button>
