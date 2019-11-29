@@ -5,11 +5,13 @@
     $u=new Usuario; 
     ob_start();
 ?>
+<link rel="stylesheet" type="text/css" href="css/adm.css" />
 <div class="card-panel" style="margin-top: 100px; margin-bottom: 100px;">
 
-  <h4 class="center-align">Servicos cadastrados</h4>
- 
-  <table class="responsive-table highlight">
+  <h1 class="tituloServico">Serviços Cadastrados</h1>
+  
+  <div style="padding-left: 30px; padding-right: 30px">
+  <table class="responsive-table highlight table">
   <div>
     <thead>
         <tr>
@@ -53,6 +55,7 @@
       $conn->close();
     ?>
   </table>
+  </div>
 </div>
 <?php 
   $conteudo = ob_get_contents();
